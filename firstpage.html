@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MoodNest | Share Your Feelings</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #fceff9, #e0f7fa);
+      color: #444;
+    }
+
+    /* Navbar */
+    .navbar {
+      width: 100%;
+      padding: 20px 40px;
+      background: transparent;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #6b4e71;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container h1 {
+      font-size: 2rem;
+      color: #6b4e71;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: #9e7bb5;
+      margin-bottom: 30px;
+    }
+
+    /* Mood Input */
+    .mood-input {
+      width: 100%;
+      min-height: 120px;
+      padding: 15px;
+      border: 1px solid #e0cfe3;
+      border-radius: 12px;
+      background: #fef9f5;
+      font-size: 1rem;
+      margin-bottom: 20px;
+      resize: vertical;
+    }
+
+    .mood-input:focus {
+      outline: none;
+      border-color: #c89bc9;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      background: #d8b4dd;
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #c89bc9;
+    }
+
+    /* Emotion Boxes */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      text-align: left;
+    }
+
+    .card h3 {
+      color: #6b4e71;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 6px;
+    }
+
+    /* Articles Section */
+    .articles {
+      margin-top: 50px;
+      text-align: left;
+    }
+
+    .articles h2 {
+      font-size: 1.5rem;
+      color: #6b4e71;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .article-list {
+      display: grid;
+      gap: 15px;
+    }
+
+    .article {
+      background: #ffffff;
+      padding: 15px 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+    }
+
+    .article a {
+      text-decoration: none;
+      font-size: 1rem;
+      color: #8a6d9c;
+      font-weight: 500;
+    }
+
+    .article a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <h2 class="logo">MoodNest 🌿</h2>
+  </header>
+
+  <!-- Main Container -->
+  <div class="container">
+    <h1>How are you feeling right now?</h1>
+    <p class="subtitle">Take a moment to reflect and share your emotions 💭</p>
+
+    <!-- Mood Input -->
+    <form action="/analyze" method="POST">
+      <textarea name="mood_text" class="mood-input" placeholder="Write in detail about your feelings..."></textarea>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+
+    <!-- Emotion Boxes -->
+    <h1  >Emotions we feel </h1> 
+    <div class="grid">
+      <div class="card">
+        <h3>Happy</h3>
+        <p><strong>Feelings:</strong> Joy, contentment, excitement</p>
+        <p><strong>Reasons:</strong> Achievements, connection, gratitude</p>
+        <p><strong>When:</strong> Celebrations, quality time, good news</p>
+      </div>
+      <div class="card">
+        <h3>Sad</h3>
+        <p><strong>Feelings:</strong> Hopelessness, heaviness, withdrawal</p>
+        <p><strong>Reasons:</strong> Loss, loneliness, unmet expectations</p>
+        <p><strong>When:</strong> After rejection, missing someone</p>
+      </div>
+      <div class="card">
+        <h3>Anger</h3>
+        <p><strong>Feelings:</strong> Frustration, irritation, resentment</p>
+        <p><strong>Reasons:</strong> Injustice, conflict, lack of control</p>
+        <p><strong>When:</strong> Arguments, stress overload, delays</p>
+      </div>
+      <div class="card">
+        <h3>Grief</h3>
+        <p><strong>Feelings:</strong> Deep sorrow, emptiness, yearning</p>
+        <p><strong>Reasons:</strong> Loss of a loved one, separation</p>
+        <p><strong>When:</strong> Bereavement, breakups, major changes</p>
+      </div>
+      <div class="card">
+        <h3>Anxiety</h3>
+        <p><strong>Feelings:</strong> Uneasiness, restlessness, worry</p>
+        <p><strong>Reasons:</strong> Uncertainty, overthinking, fear</p>
+        <p><strong>When:</strong> Exams, deadlines, unknown outcomes</p>
+      </div>
+      <div class="card">
+        <h3>Confused</h3>
+        <p><strong>Feelings:</strong> Uncertainty, hesitation, doubt</p>
+        <p><strong>Reasons:</strong> Difficult decisions, lack of clarity</p>
+        <p><strong>When:</strong> Career choices, relationships, new paths</p>
+      </div>
+      <div class="card">
+        <h3>Calm</h3>
+        <p><strong>Feelings:</strong> Peaceful, balanced, composed</p>
+        <p><strong>Reasons:</strong> Meditation, nature, self-care</p>
+        <p><strong>When:</strong> After rest, mindfulness practice</p>
+      </div>
+      <div class="card">
+        <h3>Hopeful</h3>
+        <p><strong>Feelings:</strong> Optimism, motivation, determination</p>
+        <p><strong>Reasons:</strong> New opportunities, support, progress</p>
+        <p><strong>When:</strong> Starting projects, receiving encouragement</p>
+      </div>
+    </div>
+
+    <!-- Articles -->
+    <div class="articles">
+      <h2>Articles on Mental Health</h2>
+      <div class="article-list">
+        <div class="article">
+          <a href="https://www.who.int/health-topics/mental-health" target="_blank">WHO: Understanding Mental Health</a>
+        </div>
+        <div class="article">
+          <a href="https://www.nimh.nih.gov/health/publications" target="_blank">NIMH: Mental Health Publications</a>
+        </div>
+        <div class="article">
+          <a href="https://www

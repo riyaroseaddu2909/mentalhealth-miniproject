@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recommendations | MoodNest</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #fceff9, #e0f7fa);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    header {
+      width: 100%;
+      padding: 20px 40px;
+      background: #ffffffc0;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    header .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #6b4e71;
+    }
+
+    /* Container */
+    .content {
+      flex: 1;
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .greeting {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .greeting h1 {
+      color: #6b4e71;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .greeting p {
+      color: #9e7bb5;
+      font-size: 1.1rem;
+    }
+
+    /* Detailed Feelings Box */
+    .feelings-box {
+      background: #fef9f5;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      margin-bottom: 30px;
+    }
+
+    .feelings-box h2 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      color: #6b4e71;
+    }
+
+    .feelings-box p {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    /* Recommendations Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      text-align: left;
+      height: 400px;
+      overflow-y: auto;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h2 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: #6b4e71;
+    }
+
+    .card p, .card li {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 8px;
+    }
+
+    .card ul {
+      padding-left: 20px;
+    }
+
+    /* Articles/Podcasts horizontal */
+    .horizontal-card {
+      grid-column: 1 / -1; /* span full width */
+      height: 200px;
+    }
+
+    /* Understanding Box */
+    .understanding-box {
+      background: #fef9f5;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      margin-bottom: 40px;
+    }
+
+    .understanding-box h2 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      color: #6b4e71;
+    }
+
+    .understanding-box p {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    /* Footer Message */
+    footer {
+      background: #ffffffd9;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.95rem;
+      color: #6b4e71;
+      border-top: 1px solid #eee;
+    }
+
+    footer strong {
+      color: #9e7bb5;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">MoodNest 🌿</div>
+  </header>
+
+  <div class="content">
+    <div class="greeting">
+      <h1>Here are your recommendations</h1>
+      <p>Curated just for how you’re feeling right now</p>
+    </div>
+
+    <!-- User Input / Detailed Feelings Box -->
+    <div class="feelings-box">
+      <h2>Your Feelings</h2>
+      <p>
+        Based on your input, it’s clear that you’re experiencing a mix of emotions right now. 
+        Feeling anxious or stressed can be overwhelming, and moments of sadness or confusion are normal. 
+        Your awareness of these feelings is a positive step toward understanding yourself. 
+        It’s important to acknowledge these emotions, take a pause when needed, and practice self-care. 
+        Remember, no emotion is wrong, and every feeling you have is valid. You are not alone.
+      </p>
+    </div>
+
+    <!-- Top 3 Recommendation Cards -->
+    <div class="grid">
+      <!-- Affirmations -->
+      <div class="card">
+        <h2>Affirmations</h2>
+        <ul>
+          <li>You are stronger than you think.</li>
+          <li>Every day is a new beginning.</li>
+          <li>You deserve happiness and peace.</li>
+          <li>It's okay to take a break.</li>
+          <li>You are enough just as you are.</li>
+          <li>Your feelings are valid.</li>
+          <li>You are making progress, even if small.</li>
+          <li>Kindness towards yourself is powerful.</li>
+          <li>Every challenge teaches you growth.</li>
+          <li>You have the strength to overcome difficulties.</li>
+        </ul>
+      </div>
+
+      <!-- Activities -->
+      <div class="card">
+        <h2>Activities</h2>
+        <ul>
+          <li>Journaling your thoughts for 10 mins.</li>
+          <li>Mindful walk in nature.</li>
+          <li>Stretching or light exercise.</li>
+          <li>Breathing exercises or meditation.</li>
+          <li>Listening to calming music.</li>
+        </ul>
+      </div>
+
+      <!-- Playlists -->
+      <div class="card">
+        <h2>Playlists</h2>
+        <ul>
+          <li>Calm & Relaxing Sounds</li>
+          <li>Focus & Productivity Music</li>
+          <li>Feel-Good Pop Hits</li>
+          <li>Acoustic Chill Vibes</li>
+          <li>Mellow Instrumental Tunes</li>
+        </ul>
+      </div>
+
+      <!-- Articles/Podcasts Horizontal Box -->
+      <div class="card horizontal-card">
+        <h2>Articles & Podcasts</h2>
+        <ul>
+          <li><a href="https://www.who.int/health-topics/mental-health" target="_blank">WHO: Understanding Mental Health</a></li>
+          <li><a href="https://www.nimh.nih.gov/health/publications" target="_blank">NIMH: Mental Health Publications</a></li>
+          <li><a href="https://www.apa.org/topics/mental-health" target="_blank">APA: Mental Health Resources</a></li>
+          <li><a href="https://www.mentalhealth.org.uk/publications" target="_blank">Mental Health Foundation: Articles</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Understanding Box -->
+    <div class="understanding-box">
+      <h2>We Understand You</h2>
+      <p>
+        It’s completely natural to experience a wide range of emotions, and it’s okay to feel exactly what you’re feeling right now. Whether it’s stress, sadness, confusion, or even moments of joy, acknowledging your emotions is a powerful step towards self-understanding. Remember that taking time for yourself, reflecting on your feelings, and practicing small acts of self-care can help you navigate life’s challenges with more clarity and calm. You are not alone, and your emotions are valid.
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    Recommend <strong>MoodNest</strong> to friends who may need support 🌸.  
+    Never hesitate to seek help when needed, take breaks when you must,  
+    and remember—it’s okay to feel this way. 💜
+  </footer>
+</body>
+</html>
